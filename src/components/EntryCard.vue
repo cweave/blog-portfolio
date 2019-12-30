@@ -46,7 +46,7 @@
 		&__entry {
 
 			&-card {
-				width: 40em;
+				width: 40vw;
 				padding: 2em;
 				border-radius: .5rem;
 				box-shadow: 0 5px 20px rgba($black, 0.12);

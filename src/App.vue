@@ -47,8 +47,9 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		color: $black-blue;
-		background: linear-gradient(to bottom, rgba(4,13,48,1) 0%, rgba(27,41,71,1) 52%, rgba(56,61,149,1) 86%, rgb(56, 61, 149) 100%);;
+		background: linear-gradient(to bottom, rgba(4,13,48,1) 0%, rgba(27,41,71,1) 52%, rgba(56,61,149,1) 86%, rgb(56, 61, 149) 100%) no-repeat;
 		background-attachment: fixed;
+		background-size: cover;
 		overflow: visible;
 	}
 
