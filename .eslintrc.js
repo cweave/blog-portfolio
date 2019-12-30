@@ -19,7 +19,7 @@ module.exports = {
 		indent: ['error', 'tab', { SwitchCase: 1 }],
 		'no-mixed-spaces-and-tabs': 'error',
 		'object-curly-spacing': ['error', 'always'],
-		'linebreak-style': ['error', 'windows'],
+		'linebreak-style': 'off',
 		quotes: ['error', 'single'],
 		semi: ['error', 'always'],
 		'standard/no-callback-literal': 'off',
