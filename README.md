@@ -1,5 +1,7 @@
 # blog
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f0d1dd19-b1cd-4f47-a80f-f962580f7ee1/deploy-status)](https://app.netlify.com/sites/vigorous-pasteur-05fe65/deploys)
+
 ## Project setup
 ```
 npm install
