@@ -10,22 +10,6 @@
 	</div>
 </template>
 
-<script>
-	export default {
-		watch: {
-			$route: {
-				handler(to, from) {
-					const body = document.getElementsByTagName('body')[0];
-					if (from !== 'home') {
-						body.removeAttribute('id', 'home');
-					}
-				},
-				immediate: true
-			}
-		}
-	};
-</script>
-
 <style lang="scss">
 	.fade-enter-active,
 	.fade-leave-active {

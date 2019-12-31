@@ -1,10 +1,11 @@
 <template>
-	<div class="hero">
-		<div class="star-container">
-			<div class="star" v-for="(star, index) in stars" :key="index"></div>
+	<div class="home">
+		<div class="overflow-container">
+			<div class="star-container">
+				<div class="star" v-for="(star, index) in stars" :key="index"></div>
+			</div>
 		</div>
-		<div v-if="$route.name === 'home'" id="mountains"></div>
-		<!-- <router-view></router-view> -->
+		<div id="mountains"></div>
 	</div>
 </template>
 
@@ -35,13 +36,19 @@
 </script>
 
 <style lang="scss">
-	body#home {
-		overflow: hidden;
-	}
-
 	@keyframes rotate {
 		0% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(0); }
 		100% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(-360deg); }
+	}
+
+	.overflow-container {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
 	}
 
 	.star-container {
