@@ -23,6 +23,7 @@
 		opacity: 0
 	}
 
+	html,
 	body {
 		margin: 0;
 		font-size: 18px;
@@ -31,15 +32,20 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		color: $black-blue;
+	}
+
+	html {
+
 		//background: linear-gradient(to bottom, rgba(4,13,48,1) 0%, rgba(27,41,71,1) 52%, rgba(56,61,149,1) 86%, rgb(56, 61, 149) 100%) no-repeat;
 		/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#040d30+0,1b2947+52,383d95+86,383d95+100 */
 		background: #040d30; /* Old browsers */
 		background: -moz-linear-gradient(top,  #040d30 0%, #1b2947 52%, #383d95 86%, #383d95 100%); /* FF3.6-15 */
 		background: -webkit-linear-gradient(top,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#040d30', endColorstr='#383d95',GradientType=0 ); /* IE6-9 */
-
+		background: linear-gradient(to bottom,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%) no-repeat center center fixed; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		background-attachment: fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 		background-size: cover;
 	}
 
