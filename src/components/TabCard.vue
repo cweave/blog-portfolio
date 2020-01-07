@@ -58,6 +58,7 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
+		overflow-x: auto;
 	}
 
 	.tab-heads {

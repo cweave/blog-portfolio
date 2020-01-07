@@ -135,15 +135,12 @@
 		grid-template-rows: auto;
 		grid-template-areas:
 			"hero   hero"
-			"med1   med1"
-			"med2   med2"
-			"med3	med3";
+			"hero2   hero2";
 	}
 
 	@media screen and (min-width: 750px) {
 		.grid {
 			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(5, 25vh);
 			grid-template-areas:
 				"hero   hero   hero   hero2   hero2"
 				"hero   hero   hero   hero2   hero2"
@@ -154,7 +151,6 @@
 	@media screen and (min-width: 1400px) {
 		.grid {
 			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(3, 20vh);
 			grid-template-areas:
 				"hero	hero	hero	hero2	hero2"
 				"hero	hero	hero	hero2	hero2"
@@ -164,8 +160,6 @@
 
 	.grid .item:nth-child(1)  { grid-area: hero; }
 	.grid .item:nth-child(2)  { grid-area: hero2; }
-	// .grid .item:nth-child(3)  { grid-area: med2; }
-	// .grid .item:nth-child(4)  { grid-area: med3; }
 }
 
 
