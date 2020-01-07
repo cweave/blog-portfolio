@@ -25,6 +25,7 @@
 
 	html,
 	body {
+		height: 100%;
 		margin: 0;
 		font-size: 18px;
 		line-height: 1.5;
@@ -32,27 +33,36 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		color: $black-blue;
-		position: relative;
-
-		// background-attachment: fixed hack
-		&:before {
-			content: ' ';
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			background: #040d30;
-			background: -moz-linear-gradient(top,  #040d30 0%, #1b2947 52%, #383d95 86%, #383d95 100%); // FF3.6-15
-			background: -webkit-linear-gradient(top,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%); // Chrome10-25,Safari5.1-6
-			background: linear-gradient(to bottom,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%) no-repeat center center fixed; // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
-			background-size: cover;
-			will-change: transform;
-			// creates a new paint layer
-			backface-visibility: hidden;
-			-webkit-backface-visibility: hidden;
-			z-index: -1;
+		background: #040d30;
+		background: linear-gradient(to bottom,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%) no-repeat center center fixed;
+		@media #{$mobile-devices} {
+			position: relative;
 		}
+
+		// background-attachment: fixed mobile hack
+		@media #{$mobile-devices} {
+			&:before {
+				content: ' ';
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: -moz-linear-gradient(top,  #040d30 0%, #1b2947 52%, #383d95 86%, #383d95 100%); // FF3.6-15
+				background: -webkit-linear-gradient(top,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%); // Chrome10-25,Safari5.1-6
+				background: linear-gradient(to bottom,  #040d30 0%,#1b2947 52%,#383d95 86%,#383d95 100%) no-repeat center center fixed; // W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+				background-size: cover;
+				will-change: transform;
+				// creates a new paint layer
+				backface-visibility: hidden;
+				-webkit-backface-visibility: hidden;
+				z-index: -1;
+			}
+		}
+	}
+
+	#app {
+		height: 100%;
 	}
 
 #nav {
