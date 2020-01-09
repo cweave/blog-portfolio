@@ -61,6 +61,29 @@
 		}
 	}
 
+	body {
+
+		&::-webkit-scrollbar {
+			background-color: $white;
+			width: 0.85em;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $white;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $slate;
+			border-radius: 2em;
+			border: 2px solid $slate;
+		}
+
+		&::-webkit-scrollbar-button {
+			display: none;
+		}
+
+	}
+
 	#app {
 		height: 100%;
 	}

@@ -44,7 +44,6 @@
 		},
 		mounted() {
 			this.transformStar();
-			document.getElementsByTagName('body')[0].setAttribute('id', 'home');
 		},
 		methods: {
 			transformStar() {
