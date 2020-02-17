@@ -82,4 +82,8 @@
 			background-size: 100%;
 		}
 	}
+
+	.tab-body {
+		padding: 0 1em;
+	}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="blog">
+	<div class="content">
 		<EntryCard />
 	</div>
 </template>
@@ -20,11 +20,3 @@
 		}
 	};
 </script>
-
-<style lang="scss" scoped>
-	.blog {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-</style>

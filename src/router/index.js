@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Blog from '@/views/Blog.vue';
+import StyleGuide from '@/views/StyleGuide.vue';
 import BlogEntries from '../static/articles.json';
 
 Vue.use(Router);
@@ -36,6 +37,11 @@ export default new Router({
 			name: 'blog',
 			component: Blog
 		},
-		...blogRoutes
+		...blogRoutes,
+		{
+			path: '/style-guide',
+			name: 'style-guide',
+			component: StyleGuide
+		}
 	]
 });

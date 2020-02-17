@@ -72,10 +72,10 @@
 		&:before {
 			content: "";
 			position: absolute;
-			width: 50%;
+			width: 60%;
 			height: 1px;
 			bottom: -10px;
-			left: calc(50% - 25%);
+			left: calc(50% - 30%); // 50% minus half width
 			border-bottom: 1px solid rgba($light-slate, 0.75);
 		}
 
@@ -85,14 +85,14 @@
 		}
 
 		&__date {
-			font-size: 0.85em;
+			font-size: 0.9em;
 			font-style: italic;
 			grid-row-end: span 2;
+			justify-self: end;
 		}
 
 		&__name {
 			color: $slate;
-			margin-top: -5px;
 		}
 	}
 </style>
