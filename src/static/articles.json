@@ -11,10 +11,10 @@
 
     "2020": [
         {
-            "id": "happy-new-year",
-            "date": "January 1, 2020",
-            "title": "Happy New Year",
-            "description": "Lorem Ipsum",
+            "id": "why-a-blog",
+            "date": "January 13, 2020",
+            "title": "Why a blog?",
+            "description": "My inspiration behind writing a blog.",
             "tags": [ "blog" ]
         },
         {

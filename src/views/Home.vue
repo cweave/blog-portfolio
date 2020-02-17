@@ -9,20 +9,16 @@
 		<div id="mountains"></div>
 
 
-		<div class="grid">
-			<div class="item">
-				<div class="box">
-					<h2 class="gradient-text">Priestess of software, goddess of code.</h2>
-					<p>My passion for web development started around the age of 11 with Invisionfree forums and learning what CSS was and how to create different skins. Then the discovery of MySpace happened, and it was all downhill from there (well, maybe not downhill, since my obsession eventually landed me into a career).</p>
-					<p>Currently, I am a front-end engineer at Cognito Forms located in Columbia, South Carolina (but my roots are from Michigan). I have extensive experience with sematic HTML, SCSS, and vanilla JavaScript (ES6+). My current pathway is aligned with JavaScript development, with a current focus in VueJs. Vue test utils and Jest are also in my JavaScript arsenal, ya know, to make sure everything is working smoothly.</p>
-					<p>By daylight, I click away at my rainbow backlight mechanical keyboard. In my spare time, I am a reader of sci-fi and mystery books, an enjoyer of psychological thrillers, and have a newfound enjoyment with playing Dungeons & Dragons.</p>
-					<span>¯\(ツ)/¯ and (╯°□°）╯︵ ┻━┻ are my two natural states</span>
-				</div>
+		<div class="personal-information__grid-container grid-container">
+			<div class="about">
+				<h2 class="gradient-text">Priestess of software, goddess of code.</h2>
+				<p>My passion for web development started around the age of 11 with Invisionfree forums and learning what CSS was and how to create different skins. Then the discovery of MySpace happened, and it was all downhill from there (well, maybe not downhill, since my obsession eventually landed me into a career).</p>
+				<p>Currently, I am a front-end engineer at Cognito Forms located in Columbia, South Carolina (but my roots are from Michigan). I have extensive experience with sematic HTML, SCSS, and vanilla JavaScript (ES6+). My current pathway is aligned with JavaScript development, with a current focus in VueJs. Vue test utils and Jest are also in my JavaScript arsenal, ya know, to make sure everything is working smoothly.</p>
+				<p>By daylight, I click away at my rainbow backlight mechanical keyboard. In my spare time, I am a reader of sci-fi and mystery books, an enjoyer of psychological thrillers, and have a newfound enjoyment with playing Dungeons & Dragons.</p>
+				<span>¯\(ツ)/¯ and (╯°□°）╯︵ ┻━┻ are my two natural states</span>
 			</div>
-			<div class="item">
-				<div class="box">
-					<JobHistory />
-				</div>
+			<div class="history">
+				<JobHistory />
 			</div>
 
 		</div>
@@ -60,6 +56,10 @@
 </script>
 
 <style lang="scss">
+	.home {
+		position: absolute;
+		top: 0;
+	}
 	@keyframes rotate {
 		0% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(0); }
 		100% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(-360deg); }
@@ -121,90 +121,24 @@
 		margin: 0;
 	}
 
-	@supports (display: grid) {
+	.personal-information {
 
-	.grid {
-		display: grid;
-		grid-gap: 1vw;
-		padding: 2vw;
-	}
+		&__grid-container {
+			padding: 1.25em;
 
-	.grid {
-		grid-template-columns: 1fr;
-		grid-template-rows: auto;
-		grid-template-areas:
-			"hero   hero"
-			"hero2   hero2";
-	}
+			& > div:nth-child(1)  { grid-area: about; }
+			& > div:nth-child(2)  { grid-area: history; }
 
-	@media screen and (min-width: 750px) {
-		.grid {
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-areas:
-				"hero   hero   hero   hero2   hero2"
-				"hero   hero   hero   hero2   hero2"
-				"hero   hero   hero   hero2   hero2";
+			& {
+				grid-template-areas:
+					"about about"
+					"history history";
+
+				@media screen and (min-width: 750px) {
+					grid-template-areas:
+					"about history";
+				}
+			}
 		}
 	}
-
-	@media screen and (min-width: 1400px) {
-		.grid {
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-areas:
-				"hero	hero	hero	hero2	hero2"
-				"hero	hero	hero	hero2	hero2"
-				"hero	hero	hero	hero2	hero2";
-		}
-	}
-
-	.grid .item:nth-child(1)  { grid-area: hero; }
-	.grid .item:nth-child(2)  { grid-area: hero2; }
-}
-
-
-/* flexbox fallback is the browser does not support display:grid */
-@supports not (display: grid) {
-
-	.grid {
-		display: flex;
-		flex-flow: row wrap;
-		min-height: 100vh;
-		padding: 0.75vw;
-	}
-
-	.grid .item {
-		min-height: 20vh;
-		margin: 0.75vw;
-	}
-
-	.grid .item:nth-child(1)  { flex: 0 1 calc(100% - 1.5vw); height: 50vh; }
-	.grid .item:nth-child(2)  { flex: 0 1 calc(100% - 1.5vw); }
-	.grid .item:nth-child(3)  { flex: 0 1 calc(100% - 1.5vw); }
-
-	@media screen and (min-width: 750px) {
-		.grid .item:nth-child(1)  { flex: 0 1 calc(60% - 1.5vw); }
-		.grid .item:nth-child(2)  { flex: 0 1 calc(40% - 1.5vw); height: 50vh; }
-	}
-
-	@media screen and (min-width: 1400px) {
-		.grid .item:nth-child(1)  { flex: 0 1 calc(60% - 1.5vw); }
-		.grid .item:nth-child(2)  { flex: 0 1 calc(40% - 1.5vw); }
-		.grid .item:nth-child(3)  { flex: 0 1 calc(50% - 1.5vw); }
-	}
-
-}
-
-/* Styles, just for fun */
-
-.box {
-	height: 100%;
-}
-
-.grid .item {
-	padding: 1vw;
-	background-color: $white;
-	border-radius: 0.5em;
-	box-shadow: 0 5px 20px rgba($white, 0.12);
-}
-
 </style>
