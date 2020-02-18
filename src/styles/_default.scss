@@ -179,7 +179,7 @@ h1 {
     margin: 1rem auto;
 
     @media screen and (min-width: 24.15em) {
-      line-height: calc((#{$h1-line-height-min} * 1em ) + (#{$h1-line-height-max} - #{$h1-line-height-min}) * ((100vw - (#{$bp-small} * 1em )) / (#{$bp-xlarge} - $bp-small)));
+      line-height: calc((#{$h1-line-height-min} * 1em ) + (#{$h1-line-height-max} - #{$h1-line-height-min}) * ((100vw - (#{$bp-small} * 1em )) / (#{$bp-xlarge} - #{$bp-small})));
       font-size: calc((#{$h1-font-size-max} * 1em ) + (#{$h1-font-size-max} - #{$h1-font-size-min}) * ((100vw - (#{$bp-small}) * 1em ) / (#{$bp-xlarge} - #{$bp-small})));
     }
 
