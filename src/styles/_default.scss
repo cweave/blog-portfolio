@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all linear 0.2s;
     margin: 1rem auto .5rem auto;
     letter-spacing: -0.025rem;
-	$text-wght: calc($p-vf-wght * $h1-vf-wght-multiplier-s);
+	$text-wght: calc(#{$p-vf-wght} * #{$h1-vf-wght-multiplier-s});
 }
 
 h1 {
@@ -202,7 +202,7 @@ h2 {
     line-height: $h2-line-height-min;
 
     @media screen and (min-width: 24.15em) {
-      line-height: calc((#{$h2-line-height-min} * 1em) + (#{$h2-line-height-max} - #{$h2-line-height-min}) * ((100vw - (#{$bp-small} * 1em )) / (#{$bp-xlarge} - $bp-small)));
+      line-height: calc((#{$h2-line-height-min} * 1em) + (#{$h2-line-height-max} - #{$h2-line-height-min}) * ((100vw - (#{$bp-small} * 1em )) / (#{$bp-xlarge} - #{$bp-small})));
       font-size: calc((#{$h2-font-size-min} * 1em) + (#{$h2-font-size-max} - #{$h2-font-size-min}) * ((100vw - (#{$bp-small} * 1em )) / (#{$bp-xlarge} - #{$bp-small})));
     }
 
@@ -219,7 +219,7 @@ h2 {
 
 h3 {
     /* Set $text-wght value multiplier */
-    $text-wght: calc( var($p-vf-wght) * var($h3-vf-wght-multiplier-s) );
+    $text-wght: calc( var(#{$p-vf-wght}) * var(#{$h3-vf-wght-multiplier-s}) );
     $text-ital: 1;
     font-size: calc(#{$h3-font-size-min} * 1em);
     line-height: $h3-line-height-min;
