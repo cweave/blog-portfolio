@@ -2,7 +2,8 @@
 	<div id="app">
 		<div id="nav">
 			<router-link to="/">Home</router-link> |
-			<router-link to="/blog">Blog</router-link>
+			<router-link to="/blog">Blog</router-link> |
+			<router-link to="/style-guide">Style Guide</router-link>
 		</div>
 		<transition name="fade" mode="out-in">
 			<router-view></router-view>
