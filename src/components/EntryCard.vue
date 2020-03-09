@@ -1,8 +1,7 @@
 <template>
-	<div class="blog-entries">
-		<div class="blog-entries__section" v-for="(section, index) in Object.keys(entries).reverse(section)" :key="index">
-			<!-- <h2 class="blog-entries__section-title">{{ section }}</h2> -->
-
+	<div class="blog-entries__section">
+		<!-- <h2 class="blog-entries__section-title">{{ section }}</h2> -->
+		<div v-for="(section, index) in Object.keys(entries).reverse(section)" :key="index">
 			<div class="blog-entries__entry-card" v-for="entry in entries[section]" :key="entry.id">
 				<div class="blog-entries__entry-information">
 					<span class="blog-entries__entry-date">
@@ -32,6 +31,11 @@
 
 	export default {
 		name: 'EntryCard',
+		data() {
+			return {
+				section: ''
+			};
+		},
 		computed: {
 			entries() {
 				return blogEntries;
@@ -46,7 +50,6 @@
 		&__entry {
 
 			&-card {
-				width: 40vw;
 				padding: 2em;
 				border-radius: .5rem;
 				box-shadow: 0 5px 20px rgba($black, 0.12);

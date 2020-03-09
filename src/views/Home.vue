@@ -1,12 +1,16 @@
 <template>
 	<div class="home">
-		<div class="overflow-container">
+		<!-- <div class="overflow-container">
 			<div class="star-container">
 				<div class="star" v-for="(star, index) in stars" :key="index"></div>
 			</div>
-		</div>
+		</div> -->
 
 		<div id="mountains"></div>
+		<div class="moon"></div>
+		<div class="welcome">
+			christa weaver
+		</div>
 
 
 		<div class="personal-information__grid-container grid-container">
@@ -98,16 +102,50 @@
 	}
 
 	#mountains {
-		position: relative;
-		bottom: 0;
-		width: 100%;
-		height: 100vh;
-		z-index: 1;
-		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%231c6f92' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%2329abe2' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23417592' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%2367b7e2' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%235d8095' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%238ec3e5' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23718796' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23accde3' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23848f96' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23ccdce7' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23969696' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23e0e0e0' points='943 900 1210 900 971 687'/%3E%3C/svg%3E") no-repeat center bottom;
-		background-size: cover;
+		@include mountains;
+	}
 
-		@media #{$mobile-devices} {
-			bottom: unset;
+	.moon {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Moon.svg?sanitize=true) right 100% no-repeat;
+		background-size: 40% 40%;
+		width: 50%;
+		height: 50%;
+		z-index: 1;
+		animation: moon-move-in 1.2s 1s forwards;
+	}
+
+	@keyframes moon-move-in {
+		from {
+			opacity: 0;
+			background-position: right 150%;
+		}
+		to {
+			opacity: 1;
+			background-position: top right;
+		}
+	}
+
+	.welcome {
+		width: fit-content;
+		position: absolute;
+		right: 0;
+		top: 15%;
+		left: 25%;
+		opacity: 0;
+		transform: translate(0, -15%);
+		animation: text-fade-in 1000ms 800ms forwards;
+	}
+
+	@keyframes text-fade-in {
+		from {
+			right: 0;
+		}
+		to {
+			opacity: 1;
+			right: 25%;
 		}
 	}
 

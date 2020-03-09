@@ -1,7 +1,9 @@
 <template>
 	<div class="content">
 		<router-view />
-		<button class="btn btn--primary" @click="$router.go(-1)">&laquo; Back</button>
+		<div class="row">
+			<button class="btn btn--primary" @click="$router.go(-1)">&laquo; Back</button>
+		</div>
 	</div>
 </template>
 
@@ -16,9 +18,12 @@
 </script>
 
 <style lang="scss" scopped>
+	.row {
+		margin: 1em 0;
+	}
 
 	section {
-		width: 70vw;
+		//width: 70vw;
 		background-color: white;
 		padding: 2em;
 		border-radius: .5rem;
@@ -162,6 +167,35 @@
 
 		&.inserted {
 			color: green;
+		}
+	}
+
+	blockquote {
+		margin: 0 auto;
+		border-left: 8px solid $light-slate;
+		position: relative;
+		width: 50vw;
+		box-shadow: 2px 2px 15px $light-slate;
+		padding: 0.2em 1em 0.2em 3em;
+		font-style: italic;
+
+		p {
+			margin-left: 1em;
+			font-style: italic;
+		}
+
+		&::before {
+			font-family: Arial;
+			color: $mint;
+			font-size: 4em;
+			position: absolute;
+			content: '\201C';
+			left: 10px;
+			top: -10px;
+		}
+
+		&::after {
+			content: '';
 		}
 	}
 

@@ -80,7 +80,6 @@
 	.style-guide {
 
 		&__grid-container {
-			margin: 0 3em;
 
 			& > div:nth-child(1)  { grid-area: headings; }
 			& > div:nth-child(2)  { grid-area: buttons; }
