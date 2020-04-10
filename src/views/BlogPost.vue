@@ -1,7 +1,9 @@
 <template>
 	<div class="content">
 		<router-view />
-		<button class="btn btn--primary" @click="$router.go(-1)">&laquo; Back</button>
+		<div class="row">
+			<button class="btn btn--primary" @click="$router.go(-1)">&laquo; Back</button>
+		</div>
 	</div>
 </template>
 
@@ -16,9 +18,12 @@
 </script>
 
 <style lang="scss" scopped>
+	.row {
+		margin: 1em 0;
+	}
 
 	section {
-		width: 70vw;
+		//width: 70vw;
 		background-color: white;
 		padding: 2em;
 		border-radius: .5rem;
@@ -55,137 +60,25 @@
 		overflow: auto;
 	}
 
-	:not(pre) > code[class*="language-"],
+	code,
 	pre {
-		background-color: #455a64;
 		padding: 1rem;
 		border-radius: .5rem;
 	}
 
-	/* Inline code */
-	:not(pre) > code {
-		padding: .1em;
-		border-radius: .3em;
-		white-space: normal;
+	pre {
+		background-color: #011627;
 	}
 
-	.token.comment,
-	.token.block-comment,
-	.token.prolog,
-	.token.doctype,
-	.token.cdata {
-		color: $medium-slate;
+	code {
+		color: #011627;
+		background-color: lighten(#455a64, 60%);
 	}
 
-	.token.punctuation {
-		color: $light-slate;
+	:not(pre) > code[class*="language-"] span:first-of-type
+	{
+		padding: 0;
 	}
-
-	.token.tag,
-	.token.attr-name,
-	.token.namespace,
-	.token.deleted {
-		color: #e2777a;
-	}
-
-	.token.function-name {
-		color: #6196cc;
-	}
-
-	.token.boolean,
-	.token.number,
-	.token.function {
-		color: #f08d49;
-	}
-
-	.token.property,
-	.token.class-name,
-	.token.constant,
-	.token.symbol {
-		color: #f8c555;
-	}
-
-	.token.selector,
-	.token.important,
-	.token.atrule,
-	.token.keyword,
-	.token.builtin {
-		color: #cc99cd;
-	}
-
-	.token.string,
-	.token.char,
-	.token.attr-value,
-	.token.regex,
-	.token.variable {
-		color: $mint;
-	}
-
-	.token.operator,
-	.token.entity,
-	.token.url {
-		color: $skyblue;
-	}
-
-	.token.important,
-	.token.bold {
-		font-weight: bold;
-	}
-	.token.italic {
-		font-style: italic;
-	}
-
-	.token.entity {
-		cursor: help;
-	}
-
-	.token.inserted {
-		color: green;
-	}
-
-	// pre {
-	// 	background-color: #455a64;
-	// 	padding: 1rem;
-	// 	border-radius: .5rem;
-	// 	box-shadow: 0 5px 20px rgba($black, .2);
-	// 	text-align: left;
-	// 	width: 55vw;
-	// 	margin: 2.25em auto;
-	// 	white-space: pre-wrap;
-	// 	word-break: break-word;
-
-	// 	code {
-	// 		color: white;
-	// 		font-size: 1.1em;
-	// 		line-height: 1;
-
-	// 		&.language-js {
-	// 			.hljs {
-	// 				&-comment {
-	// 					color: #999999;
-	// 				}
-
-	// 				&-keyword {
-	// 					color: #29ABE2;
-	// 					font-weight: bold;
-	// 					font-style: italic;
-	// 				}
-
-	// 				&-string {
-	// 					color: palegoldenrod;
-	// 				}
-
-	// 				&-attr {
-	// 					color: paleturquoise;
-	// 				}
-
-	// 				&-number {
-	// 					color: palevioletred;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 
 	h1,
 	h2,
@@ -194,11 +87,115 @@
 	h5,
 	p {
 		code {
-			background-color: lighten(#455a64, 60%);
 			padding: 0.25em;
-			border-radius: 0.25em;
 			white-space: pre-wrap;
 			word-break: break-word;
+		}
+	}
+
+	.token {
+		&.comment,
+		&.block-comment,
+		&.prolog,
+		&.doctype,
+		&.cdata {
+			color: $medium-slate;
+		}
+
+		&.punctuation {
+			color: $light-slate;
+		}
+
+		&.tag,
+		&.attr-name,
+		&.namespace,
+		&.deleted {
+			color: #e2777a;
+		}
+
+		&.function-name {
+			color: #6196cc;
+		}
+
+		&.boolean,
+		&.number,
+		&.function {
+			color: #82aaff ;
+		}
+
+		&.property,
+		&.class-name,
+		&.constant,
+		&.symbol {
+			color: #f8c555;
+		}
+
+		&.selector,
+		&.important,
+		&.atrule,
+		&.keyword,
+		&.builtin {
+			color: #c792ea;
+		}
+
+		&.string,
+		&.char,
+		&.attr-value,
+		&.regex,
+		&.variable {
+			color: $mint;
+		}
+
+		&.operator,
+		&.entity,
+		&.url {
+			color: $skyblue;
+		}
+
+		&.important,
+		&.bold {
+			font-weight: bold;
+		}
+
+		&.italic {
+			font-style: italic;
+		}
+
+		&.entity {
+			cursor: help;
+		}
+
+		&.inserted {
+			color: green;
+		}
+	}
+
+	blockquote {
+		margin: 0 auto;
+		border-left: 8px solid $light-slate;
+		position: relative;
+		width: 50vw;
+		box-shadow: 2px 2px 15px $light-slate;
+		padding: 0.2em 1em 0.2em 3em;
+		font-style: italic;
+
+		p {
+			margin-left: 1em;
+			font-style: italic;
+		}
+
+		&::before {
+			font-family: Arial;
+			color: $mint;
+			font-size: 4em;
+			position: absolute;
+			content: '\201C';
+			left: 10px;
+			top: -10px;
+		}
+
+		&::after {
+			content: '';
 		}
 	}
 

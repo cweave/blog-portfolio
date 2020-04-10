@@ -37,7 +37,13 @@
 					<span class="company-information__name">Innovative Network Solutions</span>
 				</div>
 				<p class="description">
-					Lorem Ipsum better hope that there are no "tapes" of our conversations before he starts leaking to the press! We have so many things that we have to do better... and certainly ipsum is one of them. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina.
+					Responsible for all stages of website creation both on the front and back end from initial design and architecture to development, deployment, and management:
+					<ul>
+						<li>Developed and maintained the functionality for in-house and client websites primarily using HTML, CSS, JavaScript/jQuery, MySQL, and PHP</li>
+						<li>Created user friendly, mobile responsive websites</li>
+						<li>Manually tested websites in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness
+						<li>Assisted in building a custom Content Management System and built client websites using it</li>
+					</ul>
 				</p>
 			</template>
 		</TabCard>
