@@ -1,13 +1,8 @@
 <template>
 	<div class="home">
-		<!-- <div class="overflow-container">
-			<div class="star-container">
-				<div class="star" v-for="(star, index) in stars" :key="index"></div>
-			</div>
-		</div> -->
+		<div class="stars-container"></div>
+		<div class="mountains-container"></div>
 
-		<div id="mountains"></div>
-		<div class="moon"></div>
 		<div class="welcome">
 			christa weaver
 		</div>
@@ -36,25 +31,6 @@
 		name: 'home',
 		components: {
 			JobHistory
-		},
-		data() {
-			return {
-				stars: 800
-			};
-		},
-		mounted() {
-			this.transformStar();
-		},
-		methods: {
-			transformStar() {
-				const stars = document.querySelectorAll('.star');
-				stars.forEach((star) => {
-					const s = 0.2 + (Math.random() * 1);
-					const curR = this.stars + (Math.random() * 300);
-
-					star.setAttribute('style', `transform-origin: 0 0 ${curR}px; transform: translate3d(0,0,-${curR}px) rotateY(${(Math.random() * 360)}deg) rotateX(${(Math.random() * -50)}deg) scale(${s}, ${s})`);
-				});
-			}
 		}
 	};
 </script>
@@ -64,12 +40,8 @@
 		position: absolute;
 		top: 0;
 	}
-	@keyframes rotate {
-		0% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(0); }
-		100% { transform: perspective(600px) rotateZ(10deg) rotateX(-50deg) rotateY(-360deg); }
-	}
 
-	.overflow-container {
+	.stars-container {
 		position: absolute;
 		top: 0;
 		width: 100%;
@@ -77,55 +49,11 @@
 		padding: 0;
 		margin: 0;
 		overflow: hidden;
+		background: url(../assets/images/stars.svg);
 	}
 
-	.star-container {
-		transform: perspective(800px);
-		transform-style: preserve-3d;
-		position: absolute;
-		bottom: 0;
-		perspective-origin: 50% 100%;
-		left: 50%;
-		animation: rotate 300s infinite linear;
-
-		.star {
-			width: 2px;
-			height: 2px;
-			background: #F7F7B6;
-			position: absolute;
-			top: 0;
-			left: 0;
-			transform-origin: 0 0 -300px;
-			transform: translate3d(0,0,-300px);
-			backface-visibility: hidden;
-		}
-	}
-
-	#mountains {
+	.mountains-container {
 		@include mountains;
-	}
-
-	.moon {
-		position: absolute;
-		top: 1em;
-		right: 1em;
-		background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Moon.svg?sanitize=true) right 100% no-repeat;
-		background-size: 40% 40%;
-		width: 50%;
-		height: 50%;
-		z-index: 1;
-		animation: moon-move-in 1.2s 1s forwards;
-	}
-
-	@keyframes moon-move-in {
-		from {
-			opacity: 0;
-			background-position: right 150%;
-		}
-		to {
-			opacity: 1;
-			background-position: top right;
-		}
 	}
 
 	.welcome {

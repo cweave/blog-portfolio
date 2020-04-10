@@ -87,6 +87,10 @@
 			height: 3px;
 			outline: none;
 
+			&:hover {
+				cursor: pointer;
+			}
+
 			span,
 			span:before,
 			span:after {
